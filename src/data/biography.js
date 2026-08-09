@@ -35,7 +35,9 @@ export const chapters = [
   { id: 'mindset', number: '10', label: 'The Mindset' },
   { id: 'nextchapter', number: '11', label: 'Next Chapter' },
   { id: 'contact', number: '12', label: 'Connect' },
+  { id: 'thanks', number: '13', label: 'Thank You' },
 ]
+
 
 export const coverChapter = {
   kicker: 'The story is still being written.',
@@ -279,6 +281,7 @@ export const motivationalWords = [
   'Discipline turns curiosity into mastery.',
   'The story is still being written.',
   'Keep going.',
+
 ]
 
 export const contactChapter = {
@@ -293,4 +296,17 @@ export const contactChapter = {
   },
   finalWord: 'I don\u2019t want to simply work with the technology of the future. I want to help build it.',
   closing: 'The story is still being written.',
+}
+
+
+export const thanksChapter = {
+  eyebrow: 'Acknowledgments',
+  title: 'With Appreciation',
+  acknowledgments: [
+    { to: 'To God', body: 'For strength, direction, and grace through every chapter of this journey.' },
+    { to: 'To Family', body: 'For believing in the plan even before it had a name.' },
+    { to: 'To You, the Reader', body: 'For taking the time to read this far.' },
+  ],
+  signOffLine: 'With gratitude,',
+  replayLabel: 'Read it again, from the beginning',
 }

@@ -87,6 +87,32 @@ export default function ChapterNav({ current, onSelect, onNext, onPrev }) {
         </button>
       </div>
 
+      {/* Mobile bottom prev/next bar — thumb-reachable tap targets */}
+      <div
+        className="md:hidden fixed bottom-0 left-0 right-0 z-40 flex items-center justify-between px-6 bg-charcoal-900/80 backdrop-blur-md border-t border-ivory-100/10"
+        style={{ paddingTop: '0.85rem', paddingBottom: 'calc(0.85rem + env(safe-area-inset-bottom))' }}
+      >
+        <button
+          onClick={onPrev}
+          disabled={current === 0}
+          className="w-12 h-12 rounded-full border border-ivory-100/15 flex items-center justify-center text-ivory-100/80 active:border-bronze-400 active:text-bronze-300 transition-colors disabled:opacity-20 disabled:pointer-events-none"
+          aria-label="Previous chapter"
+        >
+          ←
+        </button>
+        <div className="font-mono text-[11px] tracking-[0.2em] text-ivory-100/45 uppercase">
+          {chapters[current].number} <span className="text-ivory-100/20">/</span> {chapters.length.toString().padStart(2, '0')}
+        </div>
+        <button
+          onClick={onNext}
+          disabled={current === chapters.length - 1}
+          className="w-12 h-12 rounded-full border border-bronze-400/50 bg-bronze-500/10 flex items-center justify-center text-bronze-300 active:bg-bronze-500/20 transition-colors disabled:opacity-20 disabled:pointer-events-none"
+          aria-label="Next chapter"
+        >
+          →
+        </button>
+      </div>
+
       {/* Mobile full-screen chapter menu */}
       {mobileOpen && (
         <div className="md:hidden fixed inset-0 z-50 bg-charcoal-950/98 backdrop-blur-xl flex flex-col">

@@ -15,6 +15,7 @@ import Vision from './chapters/Vision.jsx'
 import Mindset from './chapters/Mindset.jsx'
 import NextChapter from './chapters/NextChapter.jsx'
 import Contact from './chapters/Contact.jsx'
+import ThankYou from './chapters/ThankYou.jsx'
 
 const chapterComponents = {
   cover: Cover,
@@ -29,8 +30,8 @@ const chapterComponents = {
   mindset: Mindset,
   nextchapter: NextChapter,
   contact: Contact,
+  thanks: ThankYou,
 }
-
 export default function App() {
   const [index, setIndex] = useState(0)
   const [direction, setDirection] = useState('next')
@@ -123,7 +124,7 @@ export default function App() {
           key={chapter.id}
           className={`page-leaf h-full w-full ${phase === 'entering' ? enterClass : 'page-leaf-active'}`}
         >
-          <ChapterComponent onNext={next} onPrev={prev} isFirst={index === 0} isLast={index === chapters.length - 1} />
+         <ChapterComponent onNext={next} onPrev={prev} onSelectChapter={goTo} isFirst={index === 0} isLast={index === chapters.length - 1} />
         </div>
       </main>
     </div>
