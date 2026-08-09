@@ -262,6 +262,25 @@ export const nextChapterChapter = {
   closingEmphasis: 'He wants to engineer it.',
 }
 
+
+
+// A quiet, rotating line — shown as a small floating accent across the site.
+// Cycles on its own roughly once a minute; hovering or tapping jumps to the
+// next one immediately. Edit this list any time to change what it says.
+export const motivationalWords = [
+  'Still learning. Still building.',
+  'Understanding why is the real answer.',
+  'Analyze. Plan. Execute.',
+  'Every process can be optimized.',
+  'Persistence over perfection.',
+  'Faith. Family. Focus.',
+  'Not just using tomorrow\u2019s tools \u2014 building them.',
+  'Every failure is data.',
+  'Discipline turns curiosity into mastery.',
+  'The story is still being written.',
+  'Keep going.',
+]
+
 export const contactChapter = {
   eyebrow: 'Final Page',
   title: 'Let\u2019s Connect',

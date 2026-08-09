@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { chapters } from './data/biography.js'
 import ChapterNav from './components/ChapterNav.jsx'
 import PortraitBadge from './components/PortraitBadge.jsx'
+import MotivationalWord from './components/MotivationalWord.jsx'
 import Cover from './chapters/Cover.jsx'
 import Person from './chapters/Person.jsx'
 import Origin from './chapters/Origin.jsx'
@@ -127,6 +128,12 @@ export default function App() {
         <PortraitBadge />
       </div>
       <ChapterNav current={index} onSelect={goTo} onNext={next} onPrev={prev} />
+      <div className="hidden md:block fixed bottom-8 right-8 z-40">
+        <MotivationalWord />
+      </div>
+      <div className="md:hidden fixed left-1/2 -translate-x-1/2 z-40" style={{ bottom: 'calc(4.75rem + env(safe-area-inset-bottom))' }}>
+        <MotivationalWord className="text-center" />
+      </div>
       <main className="page-stage h-full w-full">
         <div
           key={chapter.id}
