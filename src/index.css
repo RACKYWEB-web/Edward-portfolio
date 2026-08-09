@@ -14,6 +14,16 @@ html, body, #root {
   height: 100%;
 }
 
+/* Android Chrome (and other mobile browsers) can miscalculate 100% height
+   against their dynamic address bar, pushing fixed bottom-anchored elements
+   below the actually-visible screen. `dvh` tracks the real visible viewport
+   instead, so this only applies where the browser supports it. */
+@supports (height: 100dvh) {
+  html, body, #root {
+    height: 100dvh;
+  }
+}
+
 body {
   @apply font-body bg-charcoal-900 text-ivory-100 antialiased;
   overflow: hidden;

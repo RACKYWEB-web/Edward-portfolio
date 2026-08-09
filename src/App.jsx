@@ -36,7 +36,6 @@ export default function App() {
   const [direction, setDirection] = useState('next')
   const [phase, setPhase] = useState('active') // 'entering' | 'active'
   const isAnimatingRef = useRef(false)
-  const wheelLockRef = useRef(false)
   const touchStartX = useRef(null)
   const touchStartY = useRef(null)
 
@@ -81,21 +80,6 @@ export default function App() {
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [next, prev])
-
-  useEffect(() => {
-    const onWheel = (e) => {
-      if (wheelLockRef.current) return
-      if (Math.abs(e.deltaY) < 26) return
-      wheelLockRef.current = true
-      if (e.deltaY > 0) next()
-      else prev()
-      setTimeout(() => {
-        wheelLockRef.current = false
-      }, 900)
-    }
-    window.addEventListener('wheel', onWheel, { passive: true })
-    return () => window.removeEventListener('wheel', onWheel)
   }, [next, prev])
 
   const onTouchStart = (e) => {
