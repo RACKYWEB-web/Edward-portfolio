@@ -69,9 +69,18 @@ export default function Contact() {
 
         <div className="hairline my-12" />
 
-        <div className="flex flex-wrap gap-6 reveal-up" style={{ animationDelay: '260ms' }}>
+       <div className="flex flex-wrap gap-6 reveal-up" style={{ animationDelay: '260ms' }}>
+          <a href={`https://wa.me/${person.whatsapp}`} target="_blank" rel="noopener noreferrer" className="font-mono text-xs tracking-wide text-ivory-100/60 hover:text-bronze-300 transition-colors">
+            WhatsApp
+          </a>
+          <a href={`tel:${person.phone}`} className="font-mono text-xs tracking-wide text-ivory-100/60 hover:text-bronze-300 transition-colors">
+            Call
+          </a>
           <a href={`mailto:${person.email}`} className="font-mono text-xs tracking-wide text-ivory-100/60 hover:text-bronze-300 transition-colors">
             {person.email}
+          </a>
+          <a href={person.twitter} target="_blank" rel="noopener noreferrer" className="font-mono text-xs tracking-wide text-ivory-100/60 hover:text-bronze-300 transition-colors">
+            X
           </a>
           {person.linkedin && (
             <a href={person.linkedin} className="font-mono text-xs tracking-wide text-ivory-100/60 hover:text-bronze-300 transition-colors">

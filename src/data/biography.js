@@ -14,7 +14,10 @@ export const person = {
   state: 'Imo State',
   country: 'Nigeria',
   lga: 'Mbaitoli Local Government Area',
-  email: 'edwardzethan792@gmail.com',
+ email: 'edwardzethan792@gmail.com',
+  phone: '+2347087806251',
+  whatsapp: '2347087806251', // digits only, no + or spaces — required format for wa.me links
+  twitter: 'https://x.com/zethanE21841',
   linkedin: '',
   github: '',
   // Path to your photo once you add it to the public/ folder, e.g. '/edward.jpg'.

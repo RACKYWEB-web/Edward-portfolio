@@ -8,10 +8,31 @@ export default function ChapterNav({ current, onSelect, onNext, onPrev }) {
 
   return (
     <>
-      {/* Desktop vertical chapter rail */}
+      {/* LEFT WALL — Previous (desktop + mobile) */}
+      <button
+        onClick={onPrev}
+        disabled={current === 0}
+        className="fixed left-2 md:left-4 top-1/2 -translate-y-1/2 z-40 w-12 h-12 md:w-14 md:h-14 rounded-full border border-ivory-100/15 bg-charcoal-900/70 backdrop-blur-md flex items-center justify-center text-ivory-100/75 hover:border-bronze-400 hover:text-bronze-300 active:border-bronze-400 transition-colors disabled:opacity-0 disabled:pointer-events-none"
+        aria-label="Previous chapter"
+      >
+        <span className="text-xl md:text-2xl">←</span>
+      </button>
+
+      {/* RIGHT WALL — Next (desktop + mobile) */}
+      <button
+        onClick={onNext}
+        disabled={current === chapters.length - 1}
+        className="fixed right-2 md:right-4 top-1/2 -translate-y-1/2 z-40 w-12 h-12 md:w-14 md:h-14 rounded-full border border-bronze-400/40 bg-bronze-500/10 backdrop-blur-md flex items-center justify-center text-bronze-300 hover:bg-bronze-500/20 active:bg-bronze-500/20 transition-colors disabled:opacity-0 disabled:pointer-events-none"
+        aria-label="Next chapter"
+      >
+        <span className="text-xl md:text-2xl">→</span>
+      </button>
+
+      {/* Desktop vertical chapter rail — shifted further from the edge so
+          it doesn't crowd the Next arrow */}
       <nav
         aria-label="Chapters"
-        className="hidden md:flex fixed top-1/2 right-8 -translate-y-1/2 z-40 flex-col items-end"
+        className="hidden md:flex fixed top-1/2 right-16 -translate-y-1/2 z-30 flex-col items-end"
       >
         {chapters.map((c, i) => (
           <button
@@ -46,27 +67,9 @@ export default function ChapterNav({ current, onSelect, onNext, onPrev }) {
         </div>
       </nav>
 
-      {/* Desktop prev/next + chapter readout */}
-      <div className="hidden md:flex fixed bottom-8 left-8 z-40 items-center gap-4">
-        <button
-          onClick={onPrev}
-          disabled={current === 0}
-          className="w-11 h-11 rounded-full border border-ivory-100/15 flex items-center justify-center text-ivory-100/70 hover:border-bronze-400 hover:text-bronze-300 transition-colors disabled:opacity-20 disabled:pointer-events-none"
-          aria-label="Previous chapter"
-        >
-          ←
-        </button>
-        <div className="font-mono text-[11px] tracking-[0.2em] text-ivory-100/40 uppercase">
-          {chapters[current].number} <span className="text-ivory-100/20">/</span> {chapters.length.toString().padStart(2, '0')}
-        </div>
-        <button
-          onClick={onNext}
-          disabled={current === chapters.length - 1}
-          className="w-11 h-11 rounded-full border border-ivory-100/15 flex items-center justify-center text-ivory-100/70 hover:border-bronze-400 hover:text-bronze-300 transition-colors disabled:opacity-20 disabled:pointer-events-none"
-          aria-label="Next chapter"
-        >
-          →
-        </button>
+      {/* Desktop chapter counter, bottom-left (small, unobtrusive) */}
+      <div className="hidden md:block fixed bottom-8 left-8 z-40 font-mono text-[11px] tracking-[0.2em] text-ivory-100/35 uppercase">
+        {chapters[current].number} <span className="text-ivory-100/15">/</span> {chapters.length.toString().padStart(2, '0')}
       </div>
 
       {/* Mobile top bar */}
@@ -87,30 +90,12 @@ export default function ChapterNav({ current, onSelect, onNext, onPrev }) {
         </button>
       </div>
 
-      {/* Mobile bottom prev/next bar — thumb-reachable tap targets */}
+      {/* Mobile chapter counter, bottom-left */}
       <div
-        className="md:hidden fixed bottom-0 left-0 right-0 z-40 flex items-center justify-between px-6 bg-charcoal-900/80 backdrop-blur-md border-t border-ivory-100/10"
-        style={{ paddingTop: '0.85rem', paddingBottom: 'calc(0.85rem + env(safe-area-inset-bottom))' }}
+        className="md:hidden fixed left-4 z-40 font-mono text-[10px] tracking-[0.2em] text-ivory-100/35 uppercase"
+        style={{ bottom: 'calc(1.1rem + env(safe-area-inset-bottom))' }}
       >
-        <button
-          onClick={onPrev}
-          disabled={current === 0}
-          className="w-12 h-12 rounded-full border border-ivory-100/15 flex items-center justify-center text-ivory-100/80 active:border-bronze-400 active:text-bronze-300 transition-colors disabled:opacity-20 disabled:pointer-events-none"
-          aria-label="Previous chapter"
-        >
-          ←
-        </button>
-        <div className="font-mono text-[11px] tracking-[0.2em] text-ivory-100/45 uppercase">
-          {chapters[current].number} <span className="text-ivory-100/20">/</span> {chapters.length.toString().padStart(2, '0')}
-        </div>
-        <button
-          onClick={onNext}
-          disabled={current === chapters.length - 1}
-          className="w-12 h-12 rounded-full border border-bronze-400/50 bg-bronze-500/10 flex items-center justify-center text-bronze-300 active:bg-bronze-500/20 transition-colors disabled:opacity-20 disabled:pointer-events-none"
-          aria-label="Next chapter"
-        >
-          →
-        </button>
+        {chapters[current].number} <span className="text-ivory-100/15">/</span> {chapters.length.toString().padStart(2, '0')}
       </div>
 
       {/* Mobile full-screen chapter menu */}

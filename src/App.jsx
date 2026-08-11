@@ -3,6 +3,7 @@ import { chapters } from './data/biography.js'
 import ChapterNav from './components/ChapterNav.jsx'
 import PortraitBadge from './components/PortraitBadge.jsx'
 import MotivationalWord from './components/MotivationalWord.jsx'
+import ContactFAB from './components/ContactFAB.jsx'
 import Cover from './chapters/Cover.jsx'
 import Person from './chapters/Person.jsx'
 import Origin from './chapters/Origin.jsx'
@@ -32,6 +33,7 @@ const chapterComponents = {
   contact: Contact,
   thanks: ThankYou,
 }
+
 export default function App() {
   const [index, setIndex] = useState(0)
   const [direction, setDirection] = useState('next')
@@ -116,15 +118,27 @@ export default function App() {
       <div className="hidden md:block fixed bottom-8 right-8 z-40">
         <MotivationalWord />
       </div>
-      <div className="md:hidden fixed left-1/2 -translate-x-1/2 z-40" style={{ bottom: 'calc(4.75rem + env(safe-area-inset-bottom))' }}>
+      <div
+        className="md:hidden fixed left-1/2 -translate-x-1/2 z-40 max-w-[55vw]"
+        style={{ bottom: 'calc(1.1rem + env(safe-area-inset-bottom))' }}
+      >
         <MotivationalWord className="text-center" />
+      </div>
+      <div className="hidden md:block fixed top-8 right-8 z-40">
+        <ContactFAB />
+      </div>
+      <div
+        className="md:hidden fixed right-4 z-40"
+        style={{ bottom: 'calc(1rem + env(safe-area-inset-bottom))' }}
+      >
+        <ContactFAB />
       </div>
       <main className="page-stage h-full w-full">
         <div
           key={chapter.id}
           className={`page-leaf h-full w-full ${phase === 'entering' ? enterClass : 'page-leaf-active'}`}
         >
-         <ChapterComponent onNext={next} onPrev={prev} onSelectChapter={goTo} isFirst={index === 0} isLast={index === chapters.length - 1} />
+          <ChapterComponent onNext={next} onPrev={prev} onSelectChapter={goTo} isFirst={index === 0} isLast={index === chapters.length - 1} />
         </div>
       </main>
     </div>
