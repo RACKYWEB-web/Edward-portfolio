@@ -14,12 +14,12 @@ export const person = {
   state: 'Imo State',
   country: 'Nigeria',
   lga: 'Mbaitoli Local Government Area',
- email: 'edwardzethan792@gmail.com',
+  email: 'edwardzethan792@gmail.com',
   phone: '+2347087806251',
   whatsapp: '2347087806251', // digits only, no + or spaces — required format for wa.me links
   twitter: 'https://x.com/zethanE21841',
   linkedin: '',
-  github: '',
+  github: 'https://github.com/RACKYWEB-web',
   // Path to your photo once you add it to the public/ folder, e.g. '/edward.jpg'.
   photo: '',
   initials: 'EPA',
@@ -40,7 +40,6 @@ export const chapters = [
   { id: 'contact', number: '12', label: 'Connect' },
   { id: 'thanks', number: '13', label: 'Thank You' },
 ]
-
 
 export const coverChapter = {
   kicker: 'The story is still being written.',
@@ -182,17 +181,29 @@ export const projectsChapter = {
   eyebrow: 'Chapter Eight',
   title: 'Projects',
   subtitle: 'Building the Ideas',
-  intro: 'Edward believes that learning becomes more meaningful when ideas are turned into something real. Two projects represent important parts of that journey.',
+  intro: 'Edward believes that learning becomes more meaningful when ideas are turned into something real. These projects represent important parts of that journey.',
+  githubUrl: 'https://github.com/RACKYWEB-web',
   hasProjects: true,
   items: [
     {
       id: 'rackyweb',
       title: 'Rackyweb Global Media',
-      tagline: 'A Digital Vision in Progress',
-      summary: 'Rackyweb Global Media represents Edward\u2019s interest in technology, digital products, web development, and building something of his own. It is part of a larger ambition to create technology and digital experiences rather than simply use them.',
-      status: 'Growing',
-      chapterStatus: 'Still being written',
+      tagline: 'A Digital Vision, Live',
+      summary: 'A full business media and marketplace platform \u2014 global business news, verified business listings, partnership tiers, and a member dashboard, built from scratch.',
+      status: 'Live',
+      chapterStatus: 'Actively growing',
+      liveUrl: 'https://rackyweb-web.github.io/rackyweb-global-media-/',
       tags: [],
+    },
+    {
+      id: 'nexus',
+      title: 'Rackyweb Nexus',
+      tagline: 'A Complete Digital Ecosystem',
+      summary: 'A digital marketplace, an AI-powered learning academy, a startup hub, and a global creator community \u2014 combined into one platform, founded and built by Edward.',
+      status: 'Live',
+      chapterStatus: 'Actively growing',
+      liveUrl: 'https://rackyweb-web.github.io/Rackyweb-nexus/',
+      tags: ['E-Commerce', 'AI Learning Academy', 'Startup Hub', 'Community'],
     },
     {
       id: 'rackygpt',
@@ -201,6 +212,7 @@ export const projectsChapter = {
       summary: 'RackyGPT/RackyAI represents Edward\u2019s exploration into Artificial Intelligence. The idea comes from a desire to understand AI beyond simply using existing tools. The long-term ambition is to understand how intelligent systems can be designed, developed, and eventually applied to meaningful real-world problems.',
       status: 'In Development',
       chapterStatus: 'The beginning of a larger journey',
+      liveUrl: '',
       tags: ['Artificial Intelligence', 'Machine Learning', 'Software Development', 'Engineering Intelligence'],
     },
   ],
@@ -242,7 +254,7 @@ export const mindsetChapter = {
   subtitle: 'Keep Going.',
   intro: 'Edward knows that the journey will not always be easy. He recognizes his own weaknesses.',
   weaknessesHeading: 'Weaknesses',
-  weaknesses: ['He sometimes procrastinates.', 'He can trust people too easily.', 'He can be stubborn.'],
+  weaknesses: ['He is loyal to a fault.', 'He can trust people too easily.', 'sometimes feels alone.'],
   awareness: 'But he also understands that self-awareness is part of growth.',
   strengthsHeading: 'Strengths',
   strengthsIntro: 'His strengths are persistence and focus.',
@@ -267,8 +279,6 @@ export const nextChapterChapter = {
   closingEmphasis: 'He wants to engineer it.',
 }
 
-
-
 // A quiet, rotating line — shown as a small floating accent across the site.
 // Cycles on its own roughly once a minute; hovering or tapping jumps to the
 // next one immediately. Edit this list any time to change what it says.
@@ -284,7 +294,6 @@ export const motivationalWords = [
   'Discipline turns curiosity into mastery.',
   'The story is still being written.',
   'Keep going.',
-
 ]
 
 export const contactChapter = {
@@ -300,7 +309,6 @@ export const contactChapter = {
   finalWord: 'I don\u2019t want to simply work with the technology of the future. I want to help build it.',
   closing: 'The story is still being written.',
 }
-
 
 export const thanksChapter = {
   eyebrow: 'Acknowledgments',

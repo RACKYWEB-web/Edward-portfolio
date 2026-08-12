@@ -60,7 +60,7 @@ export default function Contact() {
             </div>
             <button
               type="submit"
-              className="font-mono text-xs tracking-[0.24em] uppercase text-bronze-300 hover:text-bronze-200 transition-colors mt-4 inline-flex items-center gap-2"
+              className="btn-shine font-mono text-xs tracking-[0.24em] uppercase text-bronze-300 hover:text-bronze-200 transition-colors mt-4 inline-flex items-center gap-2 border border-bronze-400/30 rounded-full px-5 py-2.5"
             >
               Send <span>→</span>
             </button>
@@ -69,7 +69,7 @@ export default function Contact() {
 
         <div className="hairline my-12" />
 
-       <div className="flex flex-wrap gap-6 reveal-up" style={{ animationDelay: '260ms' }}>
+        <div className="flex flex-wrap gap-6 reveal-up" style={{ animationDelay: '260ms' }}>
           <a href={`https://wa.me/${person.whatsapp}`} target="_blank" rel="noopener noreferrer" className="font-mono text-xs tracking-wide text-ivory-100/60 hover:text-bronze-300 transition-colors">
             WhatsApp
           </a>

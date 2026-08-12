@@ -51,12 +51,14 @@ export default function ChapterNav({ current, onSelect, onNext, onPrev }) {
               {c.label}
             </span>
             <span
-              className={`block rounded-full transition-all duration-300 ${
+              className={`relative block rounded-full transition-all duration-300 ${
                 i === current
                   ? 'w-2.5 h-2.5 bg-bronze-400 shadow-[0_0_12px_rgba(203,162,104,0.7)]'
                   : 'w-1.5 h-1.5 bg-ivory-100/25 group-hover:bg-bronze-300/70'
               }`}
-            />
+            >
+              {i === current && <span className="absolute inset-0 rounded-full bg-bronze-400/60 animate-ping-slow" aria-hidden="true" />}
+            </span>
           </button>
         ))}
         <div className="mt-4 w-px h-24 bg-ivory-100/10 relative overflow-hidden rounded-full">

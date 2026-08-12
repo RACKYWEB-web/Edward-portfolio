@@ -4,6 +4,8 @@ import ChapterNav from './components/ChapterNav.jsx'
 import PortraitBadge from './components/PortraitBadge.jsx'
 import MotivationalWord from './components/MotivationalWord.jsx'
 import ContactFAB from './components/ContactFAB.jsx'
+import CornerFrame from './components/CornerFrame.jsx'
+import CursorGlow from './components/CursorGlow.jsx'
 import Cover from './chapters/Cover.jsx'
 import Person from './chapters/Person.jsx'
 import Origin from './chapters/Origin.jsx'
@@ -111,6 +113,14 @@ export default function App() {
       onTouchEnd={onTouchEnd}
     >
       <div className="grain" aria-hidden="true" />
+      <CursorGlow />
+      <CornerFrame />
+      <div className="fixed top-0 left-0 right-0 z-50 h-[2px] bg-ivory-100/[0.04]">
+        <div
+          className="h-full bg-gradient-to-r from-bronze-500 via-bronze-300 to-bronze-500 transition-all duration-500 ease-out"
+          style={{ width: `${((index + 1) / chapters.length) * 100}%` }}
+        />
+      </div>
       <div className="hidden md:block fixed top-8 left-8 z-40">
         <PortraitBadge />
       </div>
